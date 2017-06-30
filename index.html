@@ -1,0 +1,90 @@
+<html ng-app="redis">
+<head>
+<title>Photon Platform Guestbook V1</title>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/angular-material.min.css" />
+<link rel="stylesheet" href="css/starrating.css" />
+<script src="js/angular.min.js"></script>
+<script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+<script src="js/angular-aria.min.js"></script>
+<script src="js/angular-messages.min.js"></script>
+<script src="js/angular-material.min.js"></script>
+<script src="controllers.js"></script>
+</head>
+<body style="margin-right: 100px; margin-left: 100px"
+	ng-controller="RedisCtrl"ng-cloak}">
+	<div style="height: 100%; overflow: auto; display: block">
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2 md-truncate flex>Virtual Hobbyshop V1</h2>
+			</div>
+		</md-toolbar>
+		<form>
+			<fieldset>
+				<md-card> <md-card-title> <md-card-content
+					layout="column" layout-align="space-between">
+				<div class="md-media-lg card-media">
+					<img src="img/plane.jpg" height="200px" />
+				</div>
+				</md-card-content> <md-card-content layout="column" layout-align="space-between">
+				<p><b>Extra 330SC Radio-Controlled Airplane</b> - An excellent aerobatic plane for the intermediate
+					to advanced pilot. Comes fully loaded with an electric motor, speed
+					controller and servos. This plane will excel at traditional aerobatic as well as 3D
+					extreme aerobatics. Just add radio and batteries. A great value!</p>
+				<p><b>Requires:</b> A 6 channel radio system and 4s LiPo 3000-3700 mAh</p>
+				<p><b>Stock status:</b> In stock</p>
+				<p><b>Shipping:</b> Ships in 2-3 day</p>
+				</md-card-content/> </md-card-title> </md-card>
+				<md-card> <md-card-content layout="column"
+					layout-align="space-between">
+
+				<h4>Rate and review this product</h4>
+
+				<span class="starRating"> <input id="rating15" type="radio"
+					ng-model="rating" value="5"> <label for="rating15">5</label>
+					<input id="rating14" type="radio" ng-model="rating" value="4">
+					<label for="rating14">4</label> <input id="rating13" type="radio"
+					ng-model="rating" value="3"> <label for="rating13">3</label>
+					<input id="rating12" type="radio" ng-model="rating" value="2">
+					<label for="rating12">2</label> <input id="rating11" type="radio"
+					ng-model="rating" value="1"> <label for="rating11">1</label>
+				</span> <input ng-model="msg" placeholder="Feedback" class="form-control"
+					type="text" name="input">
+				<br>
+				<button type="button" style="width: 100px" class="btn btn-primary"
+					ng-click="controller.onRedis()">Submit</button>
+			</fieldset>
+			</md-card-content>
+			</md-card>
+		</form>
+		<md-card> <md-card-content layout="column"
+			layout-align="space-between">
+		<div class="panel panel-default">
+			<div class="panel heading">
+				<h3 class="panel-title">Customer Feedback</h3>
+			</div>
+			<md-list flex> <md-list-item class="md-2-line"
+				ng-repeat="msg in messages track by $index"> <!-- span class="glyphicon glyphicon-ok"></span -->
+			<div class="md-list-item-text">
+				<h4>By demouser</h4>
+				<p>
+					<span class="starRating"> <input id="rating5" type="radio"
+						ng-model="msg[0]" value="5"> <label for="rating5">5</label>
+						<input id="rating4" type="radio" ng-model="msg[0]" value="4">
+						<label for="rating4">4</label> <input id="rating3" type="radio"
+						ng-model="msg[0]" value="3"> <label for="rating3">3</label>
+						<input id="rating2" type="radio" ng-model="msg[0]" value="2">
+						<label for="rating2">2</label> <input id="rating1" type="radio"
+						ng-model="msg[0]" value="1"> <label for="rating1">1</label>
+					</span> {{msg[1]}}
+				</p>
+			</div>
+			<md-divider></md-divider> </md-list-item> </md-list>
+		</div>
+		</md-card-content> </md-card>
+	</div>
+</body>
+</html>
