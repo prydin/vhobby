@@ -1,5 +1,5 @@
 # Virtual Hobbyshop - A slightly better Docker/K8S test app (based on k8s redis guestbook)
-![screenshot](screenshot.png)
+
 ## Why?
 Because I needed a slightly better looking test application than the standard redis textbook example.
 
@@ -19,5 +19,8 @@ docker-compose up -d
 ## Why model airplanes and hobby stores?
 Because I love to geek out over RC planes. 
 
-# What's the plane in the picture?
-It's a 3DHobbyShop 72" Extra. Excellent plane if you're into the aerobatic stuff. This particular model has been discontinued and replaced by the even better 75" Extra. 
+## What's the plane in the picture?
+It's a 3DHobbyShop 72" Extra. Excellent plane if you're into the aerobatic stuff. This particular model has been discontinued and replaced by the even better 75" Extra.
+
+## Screenshot
+![screenshot](screenshot.png)
