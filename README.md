@@ -1,5 +1,5 @@
 # Virtual Hobbyshop - A slightly better Docker/K8S test app (based on k8s redis guestbook)
-
+![screenshot](screenshot.png)
 ## Why?
 Because I needed a slightly better looking test application than the standard redis textbook example.
 
