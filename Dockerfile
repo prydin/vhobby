@@ -26,9 +26,16 @@ RUN pear install nrk/Predis
 RUN sed -i 's#ErrorLog /proc/self/fd/2#ErrorLog "|$/bin/cat 1>\&2"#' /etc/apache2/apache2.conf
 RUN sed -i 's#CustomLog /proc/self/fd/1 combined#CustomLog "|/bin/cat" combined#' /etc/apache2/apache2.conf
 
+# Add all the content and code
+#
 ADD guestbook.php /var/www/html/guestbook.php
 ADD controllers.js /var/www/html/controllers.js
 ADD index.html /var/www/html/index.html
 ADD img/* /var/www/html/img/
 ADD js/* /var/www/html/js/
 ADD css/* /var/www/html/css/
+
+# Make sure it's all readable. 
+#
+RUN find /var/www/html/ -type d -exec chmod 755 {} \; 
+RUN find /var/www/html/ -type f -exec chmod 644 {} \;
